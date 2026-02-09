@@ -12,10 +12,10 @@
             <div class="col-12">
                 <nav class="breadcrumbs">
                     <ul>
-                        <li><a wire:navigate href="{{ route('home') }}">Home</a></li>
-                        <li><a wire:navigate href="{{ route('account') }}">Account</a></li>
-                        <li><a wire:navigate href="{{ route('orders') }}">Orders</a></li>
-                        <li><span>Order</span></li>
+                        <li><a wire:navigate href="{{ route('home') }}">Главная</a></li>
+                        <li><a wire:navigate href="{{ route('account') }}">Личный кабинет</a></li>
+                        <li><a wire:navigate href="{{ route('orders') }}">Заказы</a></li>
+                        <li><span>Заказ</span></li>
                     </ul>
                 </nav>
             </div>
@@ -26,7 +26,7 @@
 
         <div class="update-loading" wire:loading>
             <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Загрузка...</span>
             </div>
         </div>
 
@@ -34,24 +34,24 @@
 
             <div class="col-lg-4 mb-3">
                 <div class="cart-summary p-3 sidebar">
-                    <h5 class="section-title"><span>Links</span></h5>
+                    <h5 class="section-title"><span>Ссылки</span></h5>
                     @include('incs.account-links')
                 </div>
             </div>
 
             <div class="col-lg-8 mb-3">
                 <div class="cart-content p-3 h-100 bg-white">
-                    <h5 class="section-title"><span>Order #{{ $order->id }}</span></h5>
+                    <h5 class="section-title"><span>Заказ #{{ $order->id }}</span></h5>
 
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                             <tr>
-                                <th>Image</th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Изображение</th>
+                                <th>Товар</th>
+                                <th>Цена</th>
+                                <th>Количество</th>
+                                <th>Итого</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -65,14 +65,14 @@
                                 </tr>
                             @endforeach
                             <tr>
-                                <th colspan="5" class="text-end">Total: ${{ $order->total }}</th>
+                                <th colspan="5" class="text-end">Итого: ${{ $order->total }}</th>
                             </tr>
                             </tbody>
                         </table>
                     </div>
 
                     @if($order->note)
-                        <p><strong>Note:</strong> {{ $order->note }}</p>
+                        <p><strong>Примечание:</strong> {{ $order->note }}</p>
                     @endif
 
                 </div>

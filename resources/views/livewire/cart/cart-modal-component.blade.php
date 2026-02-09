@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel" wire:ignore.self>
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasCartLabel">Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="offcanvasCartLabel">Корзина</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
     </div>
     <div class="offcanvas-body">
         @if($cart = \App\Helpers\Cart\Cart::getCart())
@@ -25,7 +25,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="4" class="text-end">Total:</td>
+                        <td colspan="4" class="text-end">Итого:</td>
                         <td>${{ \App\Helpers\Cart\Cart::getCartTotal() }}</td>
                     </tr>
                     </tfoot>
@@ -33,11 +33,11 @@
             </div>
 
             <div class="offcanvas-footer">
-                <a wire:navigate href="{{ route('cart') }}" class="btn btn-outline-warning">Cart</a>
-                <a wire:navigate href="{{ route('checkout') }}" class="btn btn-outline-secondary">Checkout</a>
+                <a wire:navigate href="{{ route('cart') }}" class="btn btn-outline-warning">Корзина</a>
+                <a wire:navigate href="{{ route('checkout') }}" class="btn btn-outline-secondary">Оформить заказ</a>
             </div>
         @else
-            <p>Cart is empty...</p>
+            <p>Корзина пуста...</p>
         @endif
 
     </div>

@@ -3,28 +3,28 @@
         <div class="dropdown">
             <button class="btn btn-sm dropdown-toggle" type="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                Account
+                Аккаунт
             </button>
             <ul class="dropdown-menu">
                 @guest
                     <li>
-                        <a class="dropdown-item" href="{{ route('login') }}" wire:navigate>Login</a>
+                        <a class="dropdown-item" href="{{ route('login') }}" wire:navigate>Вход</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('register') }}" wire:navigate>Register</a>
+                        <a class="dropdown-item" href="{{ route('register') }}" wire:navigate>Регистрация</a>
                     </li>
                 @endguest
 
                 @auth
                     <li>
-                        <a class="dropdown-item" href="{{ route('account') }}" wire:navigate>Your account</a>
+                        <a class="dropdown-item" href="{{ route('account') }}" wire:navigate>Личный кабинет</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a>
                     </li>
                     @if(auth()->user()->is_admin)
                         <li>
-                            <a class="dropdown-item" href="{{ route('admin') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('admin') }}">Админпанель</a>
                         </li>
                     @endif
                 @endauth

@@ -12,8 +12,8 @@
             <div class="col-12">
                 <nav class="breadcrumbs" id="products">
                     <ul>
-                        <li><a href="{{ route('home') }}" wire:navigate>Home</a></li>
-                        <li><span>Search results</span></li>
+                        <li><a href="{{ route('home') }}" wire:navigate>Главная</a></li>
+                        <li><span>Результаты поиска</span></li>
                     </ul>
                 </nav>
             </div>
@@ -24,7 +24,7 @@
 
         <div class="update-loading" wire:loading wire:target.except="add2Cart">
             <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Загрузка...</span>
             </div>
         </div>
 
@@ -32,7 +32,7 @@
 
             <div class="col-lg-12">
 
-                <h1 class="h3"><span>Search by: <em>{{ $query }}</em></span></h1>
+                <h1 class="h3"><span>Поиск по: <em>{{ $query }}</em></span></h1>
 
                 @if(count($products))
 
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 @else
-                    <p>No products found...</p>
+                    <p>Товары не найдены...</p>
                 @endif
 
             </div>

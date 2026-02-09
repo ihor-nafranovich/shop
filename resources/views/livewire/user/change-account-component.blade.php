@@ -12,9 +12,9 @@
             <div class="col-12">
                 <nav class="breadcrumbs">
                     <ul>
-                        <li><a wire:navigate href="{{ route('home') }}">Home</a></li>
-                        <li><a wire:navigate href="{{ route('account') }}">Account</a></li>
-                        <li><span>Change account</span></li>
+                        <li><a wire:navigate href="{{ route('home') }}">Главная</a></li>
+                        <li><a wire:navigate href="{{ route('account') }}">Личный кабинет</a></li>
+                        <li><span>Редактировать профиль</span></li>
                     </ul>
                 </nav>
             </div>
@@ -28,21 +28,21 @@
 
             <div class="col-lg-4 mb-3">
                 <div class="cart-summary p-3 sidebar">
-                    <h5 class="section-title"><span>Links</span></h5>
+                    <h5 class="section-title"><span>Ссылки</span></h5>
                     @include('incs.account-links')
                 </div>
             </div>
 
             <div class="col-lg-8 mb-3">
                 <div class="cart-content p-3 h-100 bg-white">
-                    <h5 class="section-title"><span>Change account</span></h5>
+                    <h5 class="section-title"><span>Редактировать профиль</span></h5>
 
                     <form wire:submit="save">
 
                         <div class="mb-3">
-                            <label for="name" class="form-label required">Name</label>
+                            <label for="name" class="form-label required">Имя</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                   id="name" placeholder="Name" wire:model="name">
+                                   id="name" placeholder="Имя" wire:model="name">
                             @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -62,9 +62,9 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label required">Password</label>
+                            <label for="password" class="form-label required">Пароль</label>
                             <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
-                                   placeholder="Password" wire:model="password">
+                                   placeholder="Пароль" wire:model="password">
                             @error('password')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -74,10 +74,10 @@
 
                         <div class="mb-3">
                             <button type="submit" class="btn btn-warning">
-                                Save
+                                Сохранить
                                 <div wire:loading wire:target="save">
                                     <div class="spinner-grow spinner-grow-sm" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                        <span class="visually-hidden">Загрузка...</span>
                                     </div>
                                 </div>
                             </button>

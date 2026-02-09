@@ -10,7 +10,7 @@
             <div class="col-12">
                 <nav class="breadcrumbs" id="products">
                     <ul>
-                        <li><a href="{{ route('home') }}" wire:navigate>Home</a></li>
+                        <li><a href="{{ route('home') }}" wire:navigate>Главная</a></li>
                         @foreach($breadcrumbs as $breadcrumb_slug => $breadcrumb_title)
                             @if($loop->last)
                                 <li><span>{{ $breadcrumb_title }}</span></li>
@@ -28,7 +28,7 @@
 
         <div class="update-loading" wire:loading wire:target.except="add2Cart">
             <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Загрузка...</span>
             </div>
         </div>
 
@@ -39,13 +39,13 @@
                     <button class="btn btn-warning w-100 text-start collapse-filters-btn mb-3" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseFilters" aria-expanded="false"
                             aria-controls="collapseExample">
-                        <i class="fa-solid fa-filter"></i> Filters
+                        <i class="fa-solid fa-filter"></i> Фильтры
                     </button>
 
                     <div class="collapse collapse-filters" id="collapseFilters">
 
                         @if($selected_filters)
-                            <button class="btn btn-outline-warning w-100 mb-3" wire:click="clearFilters">Clear filters</button>
+                            <button class="btn btn-outline-warning w-100 mb-3" wire:click="clearFilters">Очистить фильтры</button>
 
                             <div class="selected-filters mb-3">
                                 @foreach($filter_groups as $filter_group)
@@ -67,7 +67,7 @@
 
                         @foreach($filter_groups as $k => $filter_group)
                             <div class="filter-block" wire:key="{{ $k }}">
-                                <h5 class="section-title"><span>Filter by {{ $filter_group[0]->title }}</span></h5>
+                                <h5 class="section-title"><span>Фильтр по {{ $filter_group[0]->title }}</span></h5>
 
                                 @foreach($filter_group as $filter)
                                 <div class="form-check d-flex justify-content-between" wire:key="{{ $filter->filter_id }}">
@@ -103,24 +103,24 @@
                 @if(count($products))
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">Sort By:</span>
-                                <select class="form-select" aria-label="Sort by:" wire:change="changeSort" wire:model="sort">
-                                    @foreach($sortList as $k => $item)
-                                        <option value="{{ $k }}" @if($k == $sort) selected @endif wire:key="{{ $k }}">{{ $item['title'] }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Сортировка:</span>
+                                    <select class="form-select" aria-label="Сортировка:" wire:change="changeSort" wire:model="sort">
+                                        @foreach($sortList as $k => $item)
+                                            <option value="{{ $k }}" @if($k == $sort) selected @endif wire:key="{{ $k }}">{{ $item['title'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">Show:</span>
-                                <select class="form-select" aria-label="Show:" wire:change="changeLimit" wire:model="limit">
-                                    @foreach($limitList as $k => $item)
-                                        <option @if($k == $limit) selected @endif wire:key="{{ $k }}">{{ $item }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Показать:</span>
+                                    <select class="form-select" aria-label="Показать:" wire:change="changeLimit" wire:model="limit">
+                                        @foreach($limitList as $k => $item)
+                                            <option @if($k == $limit) selected @endif wire:key="{{ $k }}">{{ $item }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                         </div>
                     </div>
 
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 @else
-                    <p>No products found...</p>
+                    <p>Товары не найдены...</p>
                 @endif
 
             </div>
