@@ -12,7 +12,7 @@
             <div class="col-12">
                 <nav class="breadcrumbs">
                     <ul>
-                        <li><a wire:navigate href="{{ route('home') }}">Home</a></li>
+                        <li><a wire:navigate href="{{ route('home') }}">Главная</a></li>
                         @foreach($breadcrumbs as $breadcrumb_slug => $breadcrumb_title)
                             <li><a href="{{ route('category', $breadcrumb_slug) }}"
                                    wire:navigate>{{ $breadcrumb_title }}</a></li>
@@ -43,12 +43,12 @@
                             <button class="carousel-control-prev" type="button"
                                     data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
+                                <span class="visually-hidden">Предыдущий</span>
                             </button>
                             <button class="carousel-control-next" type="button"
                                     data-bs-target="#carouselExampleFade" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
+                                <span class="visually-hidden">Следующий</span>
                             </button>
                         @endif
                     </div>
@@ -73,10 +73,10 @@
                             <input type="number" class="form-control" value="{{ $quantity }}" wire:model="quantity" min="1">
                             <button class="btn btn-warning" wire:click="add2Cart({{ $product->id }}, true)" wire:loading.attr="disabled">
                                 <i class="fas fa-shopping-cart"></i>
-                                <span>Add to cart</span>
+                                <span>Добавить в корзину</span>
                                 <div wire:loading wire:target="add2Cart({{ $product->id }}, true)">
                                     <div class="spinner-grow spinner-grow-sm" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                        <span class="visually-hidden">Загрузка...</span>
                                     </div>
                                 </div>
                             </button>
@@ -136,14 +136,14 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
                                     data-bs-target="#description-tab-pane" type="button" role="tab"
-                                    aria-controls="description-tab-pane" aria-selected="true">Description
+                                    aria-controls="description-tab-pane" aria-selected="true">Описание
                             </button>
                         </li>
                         @if($attributes->isNotEmpty())
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="features-tab" data-bs-toggle="tab"
                                         data-bs-target="#features-tab-pane" type="button" role="tab"
-                                        aria-controls="features-tab-pane" aria-selected="false">Features
+                                        aria-controls="features-tab-pane" aria-selected="false">Характеристики
                                 </button>
                             </li>
                         @endif
@@ -180,7 +180,7 @@
                 <div class="row mb-5">
                     <div class="col-12">
                         <h2 class="section-title">
-                            <span>Related products</span>
+                            <span>Похожие товары</span>
                         </h2>
                     </div>
                 </div>
