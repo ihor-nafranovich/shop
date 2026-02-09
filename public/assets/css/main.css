@@ -166,7 +166,7 @@ section {
 }
 
 .section-title::after {
-    position: absolute;
+    /*position: absolute;*/
     content: "";
     width: 100%;
     top: 50%;
